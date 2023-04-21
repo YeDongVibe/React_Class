@@ -27,8 +27,6 @@ const Hello = () => {
                         <h1>{name}</h1>
                         <h2><a href = {git}>{git}</a></h2>
                         </hgroup>
-                        
-                        
                     </footer>
 
                 </article>
