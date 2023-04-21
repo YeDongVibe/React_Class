@@ -1,0 +1,11 @@
+header > h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mytr {
+    font-size: 20px;
+    text-align: right;
+
+}
