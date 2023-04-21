@@ -1,24 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Hello from './01/Hello';  //Hello테그를 불러오기(개인이 만든 테그 불러오기)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      //시작테그와 종료테그가 무조건 세투세투로 있어야함. : <~~/>
+     <Hello /> 
+
   );
 }
 
