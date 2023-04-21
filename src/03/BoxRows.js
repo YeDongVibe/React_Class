@@ -22,6 +22,7 @@ const BoxRows = ({ mv }) => {
                 <td>{row.movieNm}</td>
                 <td>{parseInt(row.salesAmt).toLocaleString()}</td>
                 <td>{icon}{Math.abs(inten)}</td>
+                {/* inten ==0 ? '':{Math.abs(inten)  : 0이면 아무것도 표시 안하고 나머진는 숫자 표시*/}
             </tr>
         );
         console.log(trTags)
