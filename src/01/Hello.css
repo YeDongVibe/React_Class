@@ -1,0 +1,11 @@
+/*Hello React 중간으로 보이게 하기*/
+article > div, article>footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+hgroup > h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
