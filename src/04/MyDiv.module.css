@@ -1,6 +1,12 @@
+/* module.css로 적용 시 각각의 컴포넌트에 css를 적용할 수 있음 */
+
 .mah1 {
     color: lightgreen;
 }
-li {
+.maul{
+    display: flex;
+}
+.mali {
     color: lightskyblue;
+    width: 45%;
 }
