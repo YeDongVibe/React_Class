@@ -10,10 +10,10 @@ const MyDivArticle = ({ aname }) => {
     return (
 
         <article>
-            <header><h1>{aname || 'MyDiv0'}</h1></header> {/*아무것도 없을 때 이렇게 쓰면 MyDiv0로 표시된다. */}
+            <header><h1>{aname || 'MyDiv0'}</h1></header> {/*Falsy 연산자 : 아무것도 없을 때 이렇게 쓰면 MyDiv0로 표시된다. */}
             <ul>
-                <li>{n == '0' ? 'MyDiv0' : 'MyDiv' + n}1</li> {/* 삼항연산자로 이용 */}
-                <li>{'MyDiv' + n}2</li>
+                <li>{n === '0' ? 'MyDiv0' : 'MyDiv' + n }1</li> {/* 삼항연산자로 이용 */}
+                <li>{'MyDiv' + n }2</li>
                 {/* <li>{aname || 'MyDiv0' + '1'}</li> {aname}1 이라고 써도 무관. */}
                 {/* <li>{'MyDiv' + n}2</li> */}
             </ul>
