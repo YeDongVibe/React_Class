@@ -226,7 +226,7 @@ const Box = () => {
                         <BoxRows1 mv={mvlist} />
                     </tbody>
                     <tfoot>
-                        
+                    
                     </tfoot>
                 </table>
             </article>
