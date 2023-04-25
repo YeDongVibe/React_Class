@@ -3,10 +3,16 @@
 .mah1 {
     color: lightgreen;
 }
-.maul{
+
+.maul {
     display: flex;
 }
+
 .mali {
     color: lightskyblue;
     width: 45%;
+}
+
+footer {
+    text-align: right;
 }

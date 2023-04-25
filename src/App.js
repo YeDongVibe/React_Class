@@ -7,12 +7,12 @@ import MyDiv from './04/MyDiv';
 
 function App() {
   return (
-      //시작테그와 종료테그가 무조건 세투세투로 있어야함. : <~~/>
-     //<Hello /> 
+    //시작테그와 종료테그가 무조건 세투세투로 있어야함. : <~~/>
+    //<Hello /> 
 
-     //<MyClock />
+    //<MyClock />
 
-     //<Box />
+    //<Box />
 
     <MyDiv />
 
