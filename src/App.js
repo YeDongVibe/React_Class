@@ -2,8 +2,8 @@
 import './App.css';
 //import Hello from './01/Hello';  //Hello테그를 불러오기(개인이 만든 테그 불러오기)
 //import MyClock from './02/MyClock';
-//import Box from './03/Box';
-import MyDiv from './04/MyDiv';
+import Box from './03/Box';
+//import MyDiv from './04/MyDiv';
 
 function App() {
   return (
@@ -12,9 +12,9 @@ function App() {
 
     //<MyClock />
 
-    //<Box />
+    <Box />
 
-    <MyDiv />
+    //<MyDiv />
 
 
   );

@@ -1,8 +1,12 @@
 import './Boxes.css';
 
-const BoxRows = ({ mv }) => {
+const BoxRows1 = ({ mv }) => {
     //const BoxRows = (probs) => { //내가 속성값을 만들어 그 속성값에 해당하는 데이터 전달.
     //const mvlist = [...probs.mv]; // ... : 배열을 나열. // probs.변수명 : 어떠한 값을 컴포넌트에 전달.
+
+    const showMv = (row) => {
+        console.log(row);
+    }
 
 
     let trTags = [];
@@ -17,7 +21,8 @@ const BoxRows = ({ mv }) => {
 
 
         trTags.push(
-            <tr className = 'mytr' key = {row.movieCd}>
+            //onclick 이벤트를 추가.
+            <tr className = 'mytr' key = {row.movieCd} onClick={()=>showMv(row)}>
                 <td>{row.rank}</td>
                 <td>{row.movieNm}</td>
                 <td>{parseInt(row.salesAmt).toLocaleString()}</td>
@@ -30,10 +35,14 @@ const BoxRows = ({ mv }) => {
 
     return (
         <>
-        {trTags}
+        <tbody>{trTags}</tbody>
+        <tfoot>
+            <td colSpan={4}>결과출력</td>
+        </tfoot>
+        
         </>
     );
 
 }
 
-export default BoxRows;
+export default BoxRows1;

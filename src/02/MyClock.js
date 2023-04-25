@@ -1,4 +1,5 @@
-import MyClockTime from "./MyClockTime";
+//import MyClockTime from "./MyClockTime";
+import MyClockTime1 from "./MyClockTime1";
 import MyClockImg from "./MyClockImg";
 //import MyClockDate from "./MyClockDate";
 import './MyClock.css';
@@ -10,7 +11,8 @@ const MyClock = () => {
             <article data-theme="dark">
                 <MyClockImg />
                 {/* <MyClockDate/> */}
-                <MyClockTime />
+                {/* <MyClockTime /> */}
+                <MyClockTime1 />
             </article>
         </main>
     );

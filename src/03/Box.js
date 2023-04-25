@@ -1,5 +1,5 @@
-import BoxRows from "./BoxRows";
-
+//import BoxRows from "./BoxRows";
+import BoxRows1 from "./BoxRows1";
 import './Boxes.css';
 
 const Box = () => {
@@ -222,8 +222,12 @@ const Box = () => {
                     </thead>
 
                     <tbody>
-                        <BoxRows mv={mvlist} />
+                        {/* <BoxRows mv={mvlist} /> */}
+                        <BoxRows1 mv={mvlist} />
                     </tbody>
+                    <tfoot>
+                        
+                    </tfoot>
                 </table>
             </article>
         </main>
