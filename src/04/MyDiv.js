@@ -1,4 +1,5 @@
 import MyDivArticle from "./MyDivArticle";
+import "./MyDiv.css"
 
 const MyDiv = () => {
 
