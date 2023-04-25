@@ -221,10 +221,10 @@ const Box = () => {
                         </tr>
                     </thead>
 
-                    <tbody>
+                
                         {/* <BoxRows mv={mvlist} /> */}
                         <BoxRows1 mv={mvlist} />
-                    </tbody>
+                
                     <tfoot>
                     
                     </tfoot>
