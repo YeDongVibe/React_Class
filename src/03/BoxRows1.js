@@ -7,9 +7,10 @@ const BoxRows1 = ({ mv }) => {
 
     const [footTag, setFootTag] = useState('');
 
+    //클릭 된 자료 확인
     const showMv = (row) => {
         console.log(row);
-        setFootTag(row.movieCd);
+        setFootTag("[ " + row.movieCd + " ]" + " : " + row.movieNm + " : " + row.openDt);
     }
 
 
