@@ -206,24 +206,23 @@ const Box = () => {
             "showCnt": "64"
         }
     ]
-
+    //만약 셀 병합을 하고 싶으면 행은 : colspan으로 묶고, 열 : rowspan으로 묶기
     return (
         <main className="container">
             <article>
                 <header><h1>일일박스오피스</h1></header>
                 <table>
-                    <thead>
-                        <tr>
+                    <thead> {/* 시멘틱테크 */}
+                        <tr> {/* tr: 행  // td : 열*/}
                             <th scope="col">순위</th>
                             <th scope="col">영화명</th>
                             <th scope="col">매출액</th>
                             <th scope="col">증감</th>
                         </tr>
                     </thead>
-                    <tbody>
+
                         {/* <BoxRows mv={mvlist} /> */}
-                        <BoxRows1 mv={mvlist} />
-                    </tbody>
+                        <BoxRows1 mv = {mvlist} />
                 </table>
             </article>
         </main>

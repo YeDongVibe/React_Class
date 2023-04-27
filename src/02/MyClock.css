@@ -3,7 +3,7 @@ article > div {
     justify-content: center;
     align-items: center;
 }
-hgroup h1,h2 {
+hgroup h1{
     display: flex;
     justify-content: center;
     align-items: center;

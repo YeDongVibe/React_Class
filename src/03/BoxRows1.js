@@ -27,10 +27,10 @@ const BoxRows1 = ({ mv }) => {
         trTags.push(
             //onclick 이벤트를 추가.
             <tr className = 'mytr' key = {row.movieCd} onClick={()=>showMv(row)}>
-                <td>{row.rank}</td>
-                <td>{row.movieNm}</td>
-                <td>{parseInt(row.salesAmt).toLocaleString()}</td>
-                <td>{icon}{Math.abs(inten)}</td>
+                <td className='rank'>{row.rank}</td>
+                <td className='movieNm'>{row.movieNm}</td>
+                <td className='salesAmt'>{parseInt(row.salesAmt).toLocaleString()}</td>
+                <td className='icon'>{icon}{Math.abs(inten)}</td>
                 {/* inten ==0 ? '':{Math.abs(inten)  : 0이면 아무것도 표시 안하고 나머진는 숫자 표시*/}
             </tr>
         );
@@ -39,11 +39,15 @@ const BoxRows1 = ({ mv }) => {
 
     return (
         <>
-        <tbody>{trTags}</tbody>
+        <tbody>
+            <tr>{trTags}</tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+        </tbody>
         <tfoot>
-            <tr>
-            <td colSpan={4}>{footTag}</td>
-            </tr>
+            {/*셀 4개 병합하기 */}
+            <tr><td colSpan={4}>{footTag}</td></tr>
         </tfoot>
         
         </>
