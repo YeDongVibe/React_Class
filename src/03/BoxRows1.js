@@ -13,14 +13,14 @@ const BoxRows1 = ({ mv }) => {
     //const [detail, setDetail] = useState('');
     //클릭 된 자료 확인
     const showMv = (row) => {
-        //
+        //js뭐시기 코드스타일로 넣기
         // let tempTag = <div>
         //     <span>[{row.movieCd}]</span>
         //     <span>{row.movieNm}</span>
         //     <span>{row.openDt}</span>
         // </div>
        // setDetail(tempTag);
-        //모든 요소를 수작업으로 집어넣기
+        //모든 요소를 수작업으로 집어넣기. : 문자열
         setFootTag("[ " + row.movieCd + " ]" + " : " + row.movieNm + " : " + row.openDt);
     }
 
