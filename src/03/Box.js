@@ -1,6 +1,8 @@
 //import BoxRows from "./BoxRows";
 import BoxRows1 from "./BoxRows1";
 import './Boxes.css';
+import style from './BoxRows.module.css'
+
 
 const Box = () => {
 
@@ -214,10 +216,10 @@ const Box = () => {
                 <table>
                     <thead> {/* 시멘틱테크 */}
                         <tr> {/* tr: 행  // td : 열*/}
-                            <th scope="col">순위</th>
-                            <th scope="col">영화명</th>
-                            <th scope="col">매출액</th>
-                            <th scope="col">증감</th>
+                            <th className = {style.th9} scope="col">순위</th>
+                            <th className = {style.th9} scope="col">영화명</th>
+                            <th className = {style.th9} scope="col">매출액</th>
+                            <th className = {style.th9} scope="col">증감</th>
                         </tr>
                     </thead>
 

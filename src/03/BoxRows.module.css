@@ -1,0 +1,25 @@
+@keyframes blink-effect {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+.td99 {
+    color:  white;
+    background-color:  darkblue;
+    font-weight: bolder;
+    border-color: red;
+}
+#td9 {
+
+    font-size: 20px;
+    /* background-color: #ff47d2; */
+    color: #e6ff3d ;
+    text-align: center;
+    animation: blink-effect 1s step-end infinite;
+}
+.th9 {
+    border-color: red;
+    font-weight: bolder;
+    color: white;
+}

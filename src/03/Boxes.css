@@ -1,14 +1,13 @@
+
 header > h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: deeppink;
+    margin: -3%;
+
 }
 
 .mytr {
-    font-size: 20px;
-    /* text-align: right; */
-
-}
-tfoot {
-    background-color: red;
+    
 }
