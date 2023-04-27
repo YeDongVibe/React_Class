@@ -29,7 +29,7 @@ const BoxRows1 = ({ mv }) => {
             <tr className='mytr' key={row.movieCd} onClick={() => showMv(row)}>
                 <td>{row.rank}</td>
                 <td>{row.movieNm}</td>
-                <td>{parseInt(row.salesAmt).toLocaleString()}</td>
+                <td>{parseInt(row.salesAmt).toLocaleString()}</td> {/*수치를 1000단위로 표시하기 위해 parseInt사용?*/}
                 <td>{icon}{Math.abs(inten)}</td>
                 {/* inten ==0 ? '':{Math.abs(inten)  : 0이면 아무것도 표시 안하고 나머진는 숫자 표시*/}
             </tr>
@@ -40,10 +40,7 @@ const BoxRows1 = ({ mv }) => {
     return (
         <>
             <tbody>
-                <tr>{trTags}</tr>
-                <tr></tr>
-                <tr></tr>
-                <tr></tr>
+                {trTags}
             </tbody>
             <tfoot>
                 {/*셀 4개 병합하기 */}
