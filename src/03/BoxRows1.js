@@ -13,11 +13,11 @@ const BoxRows1 = ({ mv }) => {
     }
 
 
-    let trTags = [];
+    let trTags = []; //빈배열 변수 잡기.
     for (let row of mv) { //배열 순환
         console.log(row.rank, row.movieNm, row.salesAmt, row.rankInten);
 
-        let icon ;
+        let icon;
         let inten = parseInt(row.rankInten)
         if (inten === 0) icon = '⏺';
         else if (inten < 0) icon = '🔼';
@@ -26,7 +26,7 @@ const BoxRows1 = ({ mv }) => {
 
         trTags.push(
             //onclick 이벤트를 추가.
-            <tr className = 'mytr' key = {row.movieCd} onClick={()=>showMv(row)}>
+            <tr className='mytr' key={row.movieCd} onClick={() => showMv(row)}>
                 <td className='rank'>{row.rank}</td>
                 <td className='movieNm'>{row.movieNm}</td>
                 <td className='salesAmt'>{parseInt(row.salesAmt).toLocaleString()}</td>
@@ -39,17 +39,17 @@ const BoxRows1 = ({ mv }) => {
 
     return (
         <>
-        <tbody>
-            <tr>{trTags}</tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-        </tbody>
-        <tfoot>
-            {/*셀 4개 병합하기 */}
-            <tr><td colSpan={4}>{footTag}</td></tr>
-        </tfoot>
-        
+            <tbody>
+                <tr>{trTags}</tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+            </tbody>
+            <tfoot>
+                {/*셀 4개 병합하기 */}
+                <tr><td colSpan={4}>{footTag}</td></tr>
+            </tfoot>
+
         </>
     );
 
