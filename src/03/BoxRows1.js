@@ -27,7 +27,7 @@ const BoxRows1 = ({ mv }) => {
 
     let trTags = []; //빈배열 변수 잡기.
     for (let row of mv) { //배열 순환
-        console.log(row.rank, row.movieNm, row.salesAmt, row.rankInten);
+        //console.log(row.rank, row.movieNm, row.salesAmt, row.rankInten);
 
         let icon;
         let inten = parseInt(row.rankInten)
@@ -46,7 +46,7 @@ const BoxRows1 = ({ mv }) => {
                 {/* inten ==0 ? '':{Math.abs(inten)  : 0이면 아무것도 표시 안하고 나머진는 숫자 표시*/}
             </tr>
         );
-        console.log(trTags)
+        //console.log(trTags)
     }
 
     return (
