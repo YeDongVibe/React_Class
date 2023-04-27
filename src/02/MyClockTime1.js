@@ -6,9 +6,12 @@ const MyClockTime1 = () => {
     let t = new Date().toLocaleTimeString();
     let myDate = new Date().toLocaleDateString();
     /*let myDate = new Date().toDateString(); : 영어로 표시*/
-    let cnt = 0;
+   // let cnt = 0;
     const [myTime, setMyTime] = useState(t);
-    //sett
+   
+    //로컬시간을 출력하기 위해서 함수형태를 이용하여 표현.
+    setInterval(() => setMyTime(new Date().toLocaleTimeString()), 1000);
+
 
 
     return (

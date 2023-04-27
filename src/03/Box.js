@@ -220,14 +220,10 @@ const Box = () => {
                             <th scope="col">증감</th>
                         </tr>
                     </thead>
-
-                
+                    <tbody>
                         {/* <BoxRows mv={mvlist} /> */}
                         <BoxRows1 mv={mvlist} />
-                
-                    <tfoot>
-                    
-                    </tfoot>
+                    </tbody>
                 </table>
             </article>
         </main>
