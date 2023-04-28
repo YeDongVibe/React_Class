@@ -22,7 +22,7 @@ const Frcst = () => {
 
     //상세정보
     //state 변수 2단계 : 변수선언
-    const [bodyTag, setBodyTag] = useState('');
+    const [bodyTag, setBodyTag] = useState(''); //usestate를 사용하기 위해 변수 선언
     const [selDt, setselDT] = useState();
     const detail = (k) => {
         //state 변수 3단계 : 값 변경
