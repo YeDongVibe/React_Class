@@ -1,0 +1,57 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 80px;
+    background-color: rgba(193, 164, 240, 0.1);
+    border-radius: 30px;
+
+}
+
+.art {
+    background-color: rgba(196, 126, 236, 0.178)
+}
+
+.bt {
+    --primary: #5e35b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bt1 {
+    background-color: #9a79dd;
+    border-color: #9a79dd;
+}
+
+.bt:hover {
+    background-color: #9a79dd;
+    border-color: #9a79dd;
+}
+
+.bt:active {
+    background-color: #9a79dd;
+    border-color: #9a79dd;
+}
+
+.sp1 {
+    font-weight: bolder;
+
+}
+
+.sp2 {
+    color: aqua;
+}
+
+.sp21 {
+    color: #49CFD7;
+}
+
+.sp22 {
+    color: #33FF33;
+}
+
+.sp23 {
+    color: #F52E7F;
+}
