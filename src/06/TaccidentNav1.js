@@ -1,18 +1,25 @@
-const TaccidentNav1 = ({c1}) => {
+const TaccidentNav1 = ({ c1, csel1, setCsel1 }) => {
+
+    //첫번째 Nav바 만들기(대분류)
+    const cTag = c1.map((item) =>
+        <li key = {item}>
+            <button onClick={() => setCsel1(item)}>{item}</button>
+        </li>
+    );
+
+
 
     return (
         <article>
 
-                <nav>
-                    <ul>
-                        <li><strong>사고유형 : 대분류</strong></li>
-                    </ul>
-                    <ul>
-                        <li><button></button></li>
-                        <li><button>Link</button></li>
-                        <li><button>Button</button></li>
-                    </ul>
-                </nav>
+            <nav>
+                <ul>
+                    <li><strong>🚔사고유형 : 대분류</strong></li>
+                </ul>
+                <ul>
+                    {cTag}
+                </ul>
+            </nav>
 
         </article>
     );
