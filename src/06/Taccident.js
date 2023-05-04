@@ -1,6 +1,7 @@
 import dataT from "./dataTaccident.json";
 import TaccidentNav1 from "./TaccidentNav1";
 import TaccidentNav2 from "./TaccidentNav2";
+import detail from "./detail";
 
 import { useState, useEffect } from "react";
 

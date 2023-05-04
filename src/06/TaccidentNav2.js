@@ -10,10 +10,10 @@ const TaccidentNav2 = ({ c2, csel1, csel2, setCsel2, selData, setSelData }) => {
         </li>
     );
 
-    let cdata = {};
-    cdata = Object.map((item) => 
-        <div className="grid" {selData}></div>
-    )
+    // let cdata = {};
+    // cdata = Object.map((item) => 
+    //     <div className="grid" {selData}></div>
+    // );
 
 
     return (
@@ -30,7 +30,7 @@ const TaccidentNav2 = ({ c2, csel1, csel2, setCsel2, selData, setSelData }) => {
                     </ul>
                     <ul>
                         <div className="cc">
-                            {cdata}
+                            {/*{cdata}*/}
                         </div>
                     </ul>
                 </nav>
