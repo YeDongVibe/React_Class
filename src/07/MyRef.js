@@ -1,36 +1,32 @@
-import { useState } from "react";
+//컴포넌트 변수 : 랜더링 한번 일어나더라도 화면에 반영이 되지 않음.
+//State 변수 : 화면이 바뀔 때 마다 랜더링이 계속 발생함.
+//Ref 변수 : 값이 바뀌지만 랜더링은 일어나지 않음. 하지만 재랜더링이 일어나는 시점에서는 화면에 반영됨.
+
+import { useState, useRef, useEffect } from "react";
 
 const MyRef = () => {
-    let cnt1 = 1;
 
-    const [cnt2, setCnt2] = useState(1);
+    const txtref = useRef();
 
-    const showCnt = () => {
-        console.log('cnt1 = ',cnt1);
-    }
+    useEffect(() => {
+        txtref.current.focus(); //커서 깜빡깜빡
+    }, []);
 
-    const showCnt1 = () => {
-        cnt1++;
-        showCnt();
-    }
-
-    const showCnt2 = () => {
-        setCnt2(cnt2 +1);
-        showCnt();
-    }
     return (
         <main className="container">
             <article>
                 <header>
-                    <div className="grid">
-                        <div><h1>컴포넌트 변수 : {cnt1}</h1></div>
-                        <div><h1>State 변수 : {cnt2}</h1></div>
-                    </div>
+                    <form>
+                        <div className="grid">
+                            <label htmlFor="txt1">과일🍎 / 채소🥦 입력</label>
+                            <input ref={txtref} type="text" id="txt1" name="txt1" required />
+                        </div>
+                        <div>
+                            <button>등록</button>
+                            <button>취소</button>
+                        </div>
+                    </form>
                 </header>
-                <div className="grid">
-                    <button onClick={() => showCnt1()}> 컴포넌트 변수</button>
-                    <button onClick={() => showCnt2()}> State 변수</button>
-                </div>
             </article>
         </main>
     );
