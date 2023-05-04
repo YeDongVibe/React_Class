@@ -8,25 +8,42 @@ const MyRef = () => {
 
     const txtref = useRef();
 
+    const itemArr = useRef([]); // 배열을 초기값으로 잡음.
+    const [itemTag, setItemTag] = useState();
+
     useEffect(() => {
-        txtref.current.focus(); //커서 깜빡깜빡
+        txtref.current.focus(); //focus : 값을 입력하는 곳에 입력받도록 유도(?) 함.
     }, []);
 
+    const addItem = (e) => {
+        e.preventDefault();
+        itemArr.current = [...itemArr.current, txtref.current.value];
+        console.log("addItem = ", txtref.current.value,itemArr.current);
+    };
+
+    const resetItem = (e) => {
+        e.preventDefault();
+        console.log("resetItem = ", itemArr.currnet);
+    };
+
     return (
-        <main className="container">
+        <main className = "container">
             <article>
                 <header>
                     <form>
-                        <div className="grid">
-                            <label htmlFor="txt1">과일🍎 / 채소🥦 입력</label>
-                            <input ref={txtref} type="text" id="txt1" name="txt1" required />
+                        <div className = "grid">
+                            <label htmlFor = "txt1">과일🍎 / 채소🥦 입력</label>
+                            <input ref = {txtref} type = "text" id = "txt1" name = "txt1" required />
                         </div>
                         <div>
-                            <button>등록</button>
-                            <button>취소</button>
+                            <button onClick={(e) => addItem(e)}>등록</button>
+                            <button onClick={(e) => resetItem(e)}>취소</button>
                         </div>
                     </form>
                 </header>
+                <div className="grid">
+                    {itemTag}
+                </div>
             </article>
         </main>
     );
