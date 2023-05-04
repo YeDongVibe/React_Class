@@ -1,0 +1,68 @@
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary: #8e24aa;
+    --primary-hover: #9c27b0;
+    --primary-focus: rgba(142, 36, 170, 0.25);
+    --primary-inverse: #FFF;
+  }
+}
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+
+h1{
+  text-align: center;
+  /* background-color: #9c27b0; */
+  animation: blink-effect 1.5s step-end infinite;
+}
+
+.cc2 {
+  display: inline-block;
+  vertical-align: middle;
+  color: white;
+  margin: 0.5rem;
+  padding: 0;
+}
+.bt1 {
+  --primary: #5e35b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bt1:hover {
+  background-color: #9a79dd;
+  border-color: #9a79dd;
+}
+
+.bt1:active {
+  background-color: #9a79dd;
+  border-color: #9a79dd;
+}
+
+.bt2 {
+  --primary: #d13cca;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bt2:hover {
+  background-color: #e03dd8;
+  border-color: #e03dd8;
+}
+
+.bt2:active {
+  background-color: #d13cca;
+  border-color: #d13cca;
+}
+
+.grid {
+  display: flex;
+  text-align: center;
+  margin: auto;
+  font-size: larger;
+
+}
