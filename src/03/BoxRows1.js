@@ -19,7 +19,7 @@ const BoxRows1 = ({ mv }) => {
         //     <span>{row.movieNm}</span>
         //     <span>{row.openDt}</span>
         // </div>
-       // setDetail(tempTag);
+        // setDetail(tempTag);
         //모든 요소를 수작업으로 집어넣기. : 문자열
         setFootTag("[ " + row.movieCd + " ]" + " : " + row.movieNm + " : " + row.openDt);
     }
@@ -55,10 +55,11 @@ const BoxRows1 = ({ mv }) => {
                 {trTags}
             </tbody>
             <tfoot>
-                {/*셀 4개 병합하기 */}
-                {/*모든 요소를 하나하나 집어넣어서 적용하기*/}
-                <tr><td id={style.td9} colSpan={4}>{footTag}</td></tr>
-
+                <tr>
+                    {/*셀 4개 병합하기 */}
+                    {/*모든 요소를 하나하나 집어넣어서 적용하기*/}
+                    <td id={style.td9} colSpan={4}>{footTag}</td>
+                </tr>
                 {/*const를 사용하여 넣기*/}
                 {/* <tr><td id={style.td9} colSpan={4}>{detail}</td></tr> */}
             </tfoot>
