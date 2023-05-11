@@ -1,8 +1,17 @@
 @media only screen and (prefers-color-scheme: dark) {
-    :root:not([data-theme]) {
-      --primary: #ac34d1;
-      --primary-hover: #9c27b0;
-      --primary-focus: rgba(142, 36, 170, 0.25);
-      --primary-inverse: #FFF;
-    }
+  :root:not([data-theme]) {
+    --primary: #ac34d1;
+    --primary-hover: #9c27b0;
+    --primary-focus: rgba(142, 36, 170, 0.25);
+    --primary-inverse: #FFF;
   }
+}
+
+.word {
+  display: inline-flex;
+  text-align: center;
+  padding: 7px;
+  margin: 5px;
+  background-color: #a85cf098;
+  color: rgb(255, 168, 243);
+}
