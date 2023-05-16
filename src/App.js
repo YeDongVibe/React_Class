@@ -7,7 +7,8 @@ import './App.css';
 //import Frcst from './05/Frcst';
 //import Taccident from './06/Taccident';
 //import MyRef from './07/MyRef';
-import Gallery from './08/Gallery';
+//import Gallery from './08/Gallery';
+import Gallery from './09/Gallery';
 
 function App() {
   return (

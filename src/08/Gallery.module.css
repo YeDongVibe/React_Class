@@ -7,6 +7,18 @@
   }
 }
 
+
+.feed {
+  width: 49%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.feed > ma:nth-child(2n - 1):last-child {
+  width: 100%;
+}
+
 .word {
   display: inline-flex;
   text-align: center;

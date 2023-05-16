@@ -11,10 +11,10 @@ const GalleryView = ({ data }) => {
             </div>
         </li>
     );
-
+    
 
     return (
-        <article>
+        <article className="ma">
             <ul>
                 <div key={data.id} className="view">
                     {dTag}

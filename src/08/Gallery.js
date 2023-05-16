@@ -44,7 +44,7 @@ const Gallery = () => {
     const show = (e) => {
         e.preventDefault();
         if (txt1.current.value === '') return;
-        let kw = encodeURI(txt1.current.value);
+        const kw = encodeURI(txt1.current.value);
         console.log(txt1.current.value, kw);
 
         getData(kw);
