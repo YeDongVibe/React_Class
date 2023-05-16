@@ -45,7 +45,7 @@ const Gallery = () => {
         url = url + `&keyword=${kw}`;
         url = url + `&_type=json`;
 
-        console.log("url",url);
+        console.log("url", url);
 
         fetch(url)
             .then((resp) => resp.json())
@@ -75,12 +75,13 @@ const Gallery = () => {
 
     }
 
+   
     return (
         <main className="container">
             <form>
                 <article>
                     <header>
-                        <h1>한국관광공사_관광사진 정보</h1>
+                        <h1>📷한국관광공사_관광사진 정보📸</h1>
                     </header>
                     <div className="grid">
                         <div>
@@ -94,7 +95,7 @@ const Gallery = () => {
 
                 </article>
             </form>
-            {items && <GalleryView content = {items}/>}
+            {items && <GalleryView content={items} />}
         </main>
     );
 }

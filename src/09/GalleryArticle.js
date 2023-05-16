@@ -10,7 +10,7 @@ tag = tag.map((i) => <div className={style.dd} key={tag + i}>{i}</div>)
                 <h3>{item.galTitle}</h3>
                 <span>{item.alPhotographyLocation}</span>
             </header>
-            <div>
+            <div className={style.bg}>
                 <img src={item.galWebImageUrl}/>
             </div>
             <footer>
