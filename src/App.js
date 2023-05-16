@@ -2,13 +2,13 @@
 import './App.css';
 //import Hello from './01/Hello';  //Hello테그를 불러오기(개인이 만든 테그 불러오기)
 //import MyClock from './02/MyClock';
-//import Box from './03/Box';
+import Box from './03/Box';
 //import MyDiv from './04/MyDiv';
 //import Frcst from './05/Frcst';
 //import Taccident from './06/Taccident';
 //import MyRef from './07/MyRef';
 //import Gallery from './08/Gallery';
-import Gallery from './09/Gallery';
+//import Gallery from './09/Gallery';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
 
     //<MyClock />
 
-    //<Box />
+    <Box />
 
     //<MyDiv />
 
@@ -27,7 +27,7 @@ function App() {
 
     //<MyRef />
 
-    <Gallery />
+    //<Gallery />
 
   );
 }
