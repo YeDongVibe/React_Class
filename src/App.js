@@ -9,7 +9,8 @@ import './App.css';
 //import MyRef from './07/MyRef';
 //import Gallery from './08/Gallery';
 //import Gallery from './09/Gallery';
-import FcstMain from './10/FcstMain';
+import RouteMain from './10/RouteMain';
+//import FcstMain from './11/FcstMain';
 
 function App() {
   return (
@@ -30,7 +31,9 @@ function App() {
 
     //<Gallery />
 
-    <FcstMain />
+    <RouteMain />
+
+    //<FcstMain />
 
   );
 }
