@@ -3,38 +3,51 @@ import { Link } from 'react-router-dom';
 import style from './Fcst.module.css'
 
 
-import UltraSrtFcst from './UltraSrtFcst';
-import VilageFcst from './VilageFcst';
-import Fcst from "./Fcst";
+//import UltraSrtFcst from './UltraSrtFcst';
+//import VilageFcst from './VilageFcst';
+//import Fcst from "./Fcst";
 // import FcstNav from "./FcstNav";
 // import FcstTable from './FcstTable'
 
 import xy from  './getxy.json';
 
 const FcstMain = () => {
-    //날짜 선택창 만들기
-    const dt = useRef();
+    //state 변수 만들기
+    const [dt, setDt] = useState();
+    //const [code, setCode] = useState();
+    const [area, setArea] = useState();
+    const [x, setX] = useState();
+    const [y, setY] = useState();
 
+    const txt1 = useRef();
+    const sel1 = useRef();
+
+    //date가 변경되었을 때
     useEffect(() => {
-        let day = new Date();
+        console.log(dt);
+    },[dt]);
 
-    });
-
-    const getDt = (day) => {
-        day = dt.current.value();
+     //날짜 가져오기
+     const getDt = () => {
+        let tdt = txt1.current.value.replaceAll('-', '');
+        
+        setDt(tdt);
     };
 
     //지역 선택창 만들기
     const ops = xy.map((item) => 
         <option value={item["행정구역코드"]} key={item["행정구역코드"]}>{item["1단계"]}</option>
     );
+    console.log("xy",xy);
 
-    //데이터 가져오기(x,y)
-    const getData = () => {
-        let codt = ["격자 X", "격자 Y"];
-        let codtob = {};
-        codt.map((item) => codtob[xy[item]])
-        console.log("codt", codt);
+
+   //지역 변경 시 데이터 가져오기
+    const getSel = () => {
+        let temp = xy.filter((item) => item["행정구역코드"] === parseInt(sel1.current.value))[0] ;
+        console.log(temp);
+        setArea(temp["1단계"]);
+        setX(temp["격자 X"]);
+        setY(temp["격자 Y"]);
     };
 
 
@@ -49,18 +62,18 @@ const FcstMain = () => {
 
                     <div className="grid">
                         <div>
-                            <input ref = {dt} type = "date" id = "dt" name = "dt" onChange = {() => getDt()}/>
+                            <input ref = {txt1} type = "date" id = "dt" name = "dt" onChange = {() => getDt()}/>
                         </div>
                         <div>
-                            <select id = 'sel' name="sel">
+                            <select ref = {sel1} id = 'local' name="local" onChange = {() => getSel()}>
                                 <option value = ''>선택</option>
                                 {ops}
                                 </select>
                         </div>
                     </div>
                     <div className="grid">
-                        <Link to='/ultra' role='button'>📢초단기예보</Link>
-                        <Link to='/vilage' role='button'>📣단기예보</Link>
+                        <Link to={ `/ultra/${dt}/${area}/${x}/${y}` } role='button'>📢초단기예보</Link>
+                        <Link to={`/vilage/${dt}/${area}/${x}/${y}`} role='button'>📣단기예보</Link>
                     </div>
                 </form>
             </article>

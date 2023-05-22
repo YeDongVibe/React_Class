@@ -1,4 +1,5 @@
-import FcstTable from './FcstTable'
+import FcstTable from './FcstTable';
+import { useParams } from "react-router-dom";
 
 const VilageFcst = () => {
     return(
