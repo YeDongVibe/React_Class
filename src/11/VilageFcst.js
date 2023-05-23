@@ -25,12 +25,12 @@ const VilageFcst = () => {
     useEffect(() => {
         let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=VVOmSStfN2wJSHEf%2BdtpJXmiBOUek6SBLCa3ue%2BfX1qCYUMmwRU13VFK6bcrNTm6XpOMTYs1Z77cRmRno%2BYqkg%3D%3D&numOfRows=900&pageNo=1&base_date=${dt}&base_time=0500&nx=${x}&ny=${y}&dataType=json`;
 
+        //console.log("url",url);
         fetch(url)
         .then((res) => res.json())
         .then((data) => setDate(data.response.body.items.item))
         .catch((e) => console.log(e));
-
-         // eslint-disable-next-line
+        // eslint-disable-next-line
     }, []);
 
 
