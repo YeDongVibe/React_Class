@@ -7,7 +7,7 @@ const FcstNav = () => {
                 <li>🌞기상청 단기예보</li>
             </ul>
             <ul>
-            <li><Link to = '/' role = "button">단기예보 Home🏠</ Link></li>
+            <li><Link to = '/' role = "button">예보 Home🏠</ Link></li>
             </ul>
         </nav>
     );

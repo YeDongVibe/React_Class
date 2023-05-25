@@ -54,7 +54,7 @@ const FcstMain = () => {
             <article>
                 <form>
                     <header>
-                        <h1>📊단기예보 선택👆🏼</h1>
+                        <h1>📊예보 선택👆🏼</h1>
                     </header>
 
                     <div className="grid">
