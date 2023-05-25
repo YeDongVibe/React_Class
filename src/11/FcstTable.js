@@ -1,86 +1,87 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import style from './Fcst.module.css';
+import { useState, useEffect, useRef } from "react"
+import code from "./getcode.json"
+const FcstTable = ({ items, gubun }) => {
+    //useStateq변수 :변수값이 변경되면 재랜더링, 컴포넌트에서만 변경가능
 
-
-const FcstTable = ({ datas, codeData }) => {
-    const dt = useParams().dt;
-    const area = useParams().area;
-    const x = useParams().x;
-    const y = useParams().y;
-
-    let year = dt.slice(0, 4);
-    let month = dt.slice(4, 6);
-    let day = dt.slice(6, 8);
-
-    console.log("datas", datas);
-    console.log("codeData", codeData);
-
-    const ultraCode = codeData.filter((datas) => datas["예보구분"] === "초단기예보");
-    const vilageCode = codeData.filter((datas) => datas["예보구분"] === "단기예보");
-
-    const [tags, setTags] = useState();
-
-
-
-
+    const [trTags, setTrTags] = useState();
+    const [opTags, setOpTags] = useState();
+    const sel = useRef();
     useEffect(() => {
-
-        //temp를 필터걸어서 밑에 temp.map해주기
-        let temp = datas.map((i, idx) => 
-            <tr>
-                <td className = {style.std}>{i.category}</td>
-                <td className = {style.std}>{i.fcstDate}</td>
-                <td className = {style.std}>{i.fcstTime}</td>
-                <td className = {style.std}>{i.fcstValue}</td>
-            </tr>
-            )
-            console.log(temp)
-            setTags(temp);
-        }, [datas]);
-
-
-
-
-        return (
-            <main>
-                <article>
-                    <header>
-                        <div className="grid">
-                            <h1 className={style.short}>📣초단기예보</h1>
-                            <h3 className={style.dts}> {year}-{month}-{day} {area}</h3>
-                        </div>
-                        <select onChange={(e) => setTags(e.target.value)}>
-                        {ultraCode.map((code) => (
-                            <option value={code["항목값"]} key={code["항목값"]}>
-                                {code["항목명"]}({code["항목값"]})
-                            </option>
-                        ))}
-                    </select>
-                    <select onChange={(e) => setTags(e.target.value)}>
-                        {vilageCode.map((code) => (
-                            <option value={code["항목값"]} key={code["항목값"]}>
-                                {code["항목명"]}({code["항목값"]})
-                            </option>
-                        ))}
-                    </select>
-                    </header>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th scope="col" className={style.slist}>항목명</th>
-                                <th scope="col" className={style.slist}>예측일자</th>
-                                <th scope="col" className={style.slist}>예측시간</th>
-                                <th scope="col" className={style.slist}>예보 값</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {tags}
-                        </tbody>
-
-                    </table>
-                </article>
-            </main>
+        let tempcd = code.filter((i) => i["예보구분"] === gubun);
+        // console.log("code", code);
+        tempcd = tempcd.map((i) =>
+            <option key="" value={i["항목값"]}>{i["항목명"]}({i["항목값"]})</option>
         );
+        setOpTags(tempcd);
+
+
+    }, [gubun]);
+
+
+    const showItem = (e) => {
+        e.preventDefault();
+
+        if (items === undefined) return;
+        let temp = items.filter((i) => i.category === sel.current.value);
+        let tempcd = code.filter((i) => i["예보구분"] === gubun && i["항목값"] === sel.current.value);
+        tempcd = tempcd[0]
+        let skyobj = { "1": "🌞", "3": "⛅", "4": "☁" }
+        let ptyobj = { "0": "❌", "1": "☔", "2": "☔/🌨", "3": "🌨", "5": "💧", "6": "빗방울날림", "7": "눈날림" }
+        temp = temp.map((i, idx) =>
+            <tr key={i.category + idx}>
+                <td>{tempcd["항목명"]}</td>
+                <td>{i.fcstDate.slice(0, 4)}-{i.fcstDate.slice(4, 6)}-{i.fcstDate.slice(6, 8)}</td>
+                <td> {i.fcstTime.slice(0, 2)} : {i.fcstTime.slice(2, 4)}</td>
+                <td>
+                    {(i.category === "SKY") ? skyobj[i.fcstValue]
+                        : (i.category === "PTY") ? ptyobj[i.fcstValue] :
+                            i.fcstValue + tempcd["단위"]}
+
+                </td>
+
+            </tr>
+
+        );
+
+        setTrTags(temp);
+
     }
+    return (
+        <main className="container">
+            <article>
+                <header>
+                    <form>
+                        <div className="grid">
+                            <div><h2>기상청 {gubun}</h2></div>
+                            <div>
+                                <select ref={sel} id="sel" name="sel" onChange={showItem}>
+
+                                    <option val="">고르시오</option>
+                                    {opTags}
+                                </select>
+
+                            </div>
+
+                        </div>
+                    </form>
+                </header>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">자료구분 코드</th>
+                            <th scope="col">예측일자</th>
+                            <th scope="col">예측시간</th>
+                            <th scope="col">예보 값</th>
+
+                        </tr>
+                        {items && trTags}
+                    </thead>
+                </table>
+            </article>
+        </main>
+
+
+
+    );
+}
 export default FcstTable;

@@ -10,7 +10,7 @@ import './App.css';
 //import Gallery from './08/Gallery';
 //import Gallery from './09/Gallery';
 //import RouteMain from './10/RouteMain';
-import Fcst from './11/Fcst';
+import FcstMain from './11/FcstMain';
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
 
     //<RouteMain />
 
-    <Fcst />
+    <FcstMain />
 
   );
 }
