@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko"> <!--변역하실까요?이런거를 물을 수 있기에 기본으로 ko로 잡음-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--디바이스 별 사이즈 결정-->
+    <title>날씨 예보</title>
+    <script> //javaScript 코드를 넣기 위해 표시함, script가 곧 java Script임.
+         //alert("안녕하세염");
+
+        //show라는 function을 실행시 이벤트 발생
+        function show() {
+            //let, const와 같은 변수 선언. var은 안쓰니깐 생각 안해도된다.
+            var kn = form1.txt1.value;
+            console.log("kn",kn);
+            if(kn == "") {
+                alert("값을 입력하라우")
+                form1.txt1.focus();
+                return;
+            }
+            alert(kn + "님 안녕하세염");
+        }
+    </script>
+
+</head>
+<body>
+    <!--사용자와 인터페이스를 위한 정의 태그 만들기-->
+    <h1>단기예보</h1>
+    <ul>
+        <li>강수확률(POP) "%" </li>
+        <li>강수형태(PTY) "코드값"</li>
+        <li>1시간 강수량(PCP) "범주 (1mm)"</li>
+    </ul>
+
+    <h1>초단기예보</h1>
+    <ul>
+        <li>1시간 강수량(RN1) "범주 (1mm)"</li>
+        <li>하늘상태(SKY) "코드값" </li>
+        <li>동서바람성분(UUU) "m\/s"</li>
+    </ul>
+
+    <form method="get" action="a.html" name="form1">
+        선택 : <input type = "text" name="txt1">
+        <!--show라는 함수를 지정하여 호출함-->
+        <input type ="button" value="확인" onclick="show()">
+    </form>
+</body>
+</html>

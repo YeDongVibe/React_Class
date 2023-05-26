@@ -1,9 +1,18 @@
 import { useState, useEffect, useRef } from "react"
+import { useParams } from "react-router-dom";
 import code from "./getcode.json"
 import style from './Fcst.module.css'
 
-const FcstTable = ({ items, gubun }) => {
-    //useStateq변수 :변수값이 변경되면 재랜더링, 컴포넌트에서만 변경가능
+const FcstTable = ({ items, gubun}) => {
+    //useState변수 :변수값이 변경되면 재랜더링, 컴포넌트에서만 변경가능
+
+    const area = useParams().area;
+    const dt = useParams().dt;
+    
+    let year = dt.slice(0,4);
+    let month = dt.slice(4,6);
+    let day= dt.slice(6,8);
+
 
     const [trTags, setTrTags] = useState();
     const [opTags, setOpTags] = useState();
@@ -54,14 +63,16 @@ const FcstTable = ({ items, gubun }) => {
                 <header>
                     <form>
                         <div className="grid">
-                            <div><h2 className = {style.short}>📢기상청 {gubun}</h2></div>
+                            <h2 className = {style.short}> 📢기상청 {gubun} </h2>
+                            <h3 className= {style.dts}> {year}-{month}-{day} {area}</h3>
+                            </div>
                             <div>
                                 <select ref={sel} id="sel" name="sel" onChange={showItem}>
                                     <option val="">고르시오</option>
                                     {opTags}
                                 </select>
                             </div>
-                        </div>
+
                     </form>
                 </header>
                 <table>
