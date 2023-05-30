@@ -1,6 +1,6 @@
 
 import './App.css';
-import { RecoilRoot } from "recoil";
+
 //import Hello from './01/Hello';  //Hello테그를 불러오기(개인이 만든 테그 불러오기)
 //import MyClock from './02/MyClock';
 //import Box from './03/Box';
@@ -39,9 +39,9 @@ function App() {
     //<Fcst />
 
     //<CodeView />
-    <RecoilRoot>
-      <Cnt />
-    </RecoilRoot>
+
+    <Cnt />
+
   );
 }
 
