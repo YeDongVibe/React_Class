@@ -1,3 +1,5 @@
+//전역 변수만 관리하기에 태그는 사용하면 안된다.
+
 import { atom, selector } from "recoil";
 
 //atom을 사용 방법
