@@ -1,12 +1,18 @@
 import CodeGubun from "./CodeGubun";
+import CodeList from "./CodeList";
 //CodeGubun이라는 Component(함수)를 사용하기 위해 import함
+
+import { RecoilRoot } from "recoil";
 
 const CodeView = () => {
     return (
-        <>
-            <h1>Code</h1>
-            <CodeGubun />
-        </>
+        <RecoilRoot>
+            <main className="container">
+                <h1>Code</h1>
+                <CodeGubun />
+                <CodeList />
+            </main>
+        </RecoilRoot>
     );
 }
 export default CodeView;

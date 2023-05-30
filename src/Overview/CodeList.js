@@ -1,5 +1,7 @@
 import Code from './getcode.json';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
+import { CodeAtom } from "./CodeAtom";
+import { useRecoilValue } from "recoil";
 
 //const CodeList = (probs) => {
 //probs는 object로 넘어감.{속성:값}의 형태로.
@@ -7,7 +9,10 @@ import { useState, useEffect } from 'react';
 //probs.sell은 probs의 값을 가져옴.
 //console.log("probs값",probs.sell);
 //------------------------------------------------------------------------------------------------------------------------------
-const CodeList = ({ sell }) => {
+const CodeList = () => {
+
+    const sell = useRecoilValue(CodeAtom);
+
     //{sell}이라고 넘기는 이유는 object이기에 그 형태를 넘어오는 것을 보기 위해 이렇게 넘김.
     // console.log("{sell}",sell);
     // console.log("code",Code);

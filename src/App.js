@@ -12,8 +12,8 @@ import './App.css';
 //import Gallery from './09/Gallery';
 //import RouteMain from './10/RouteMain';
 //import Fcst from './11/Fcst';
-//import CodeView from './Overview/CodeView';
-import Cnt from './12/Cnt';
+import CodeView from './Overview/CodeView';
+//import Cnt from './12/Cnt';
 
 function App() {
   return (
@@ -38,9 +38,9 @@ function App() {
 
     //<Fcst />
 
-    //<CodeView />
+    <CodeView />
 
-    <Cnt />
+    //<Cnt />
 
   );
 }
